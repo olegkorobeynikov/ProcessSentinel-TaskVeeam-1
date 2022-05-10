@@ -1,6 +1,6 @@
 # ProcessSentinel-TaskVeeam-1
 
-## ENG
+## Task ENG
 
 Write a C# utility which monitors Windows processes and "kills" those processes, that take too long.
 - The input consists of three parameters: the name of the process, the allowed lifetime (in minutes) and the frequency of checking (in minutes).
@@ -9,7 +9,10 @@ Write a C# utility which monitors Windows processes and "kills" those processes,
 Example launches: monitor.exe notepad 5 1
 With these options the tool checks once per minute if the process notepad is alive for more than 5 minutes, and &quot;kills&quot; it if it is.
 
-## RUS
+#### Notes
+The project contains a small part of the tests as an example. The rest of the tests were not written, because for this task it is more reasonable to check manually.
+
+## Задание RUS
 
 Написать на C# утилиту, которая мониторит процессы Windows и &quot;убивает&quot; те процессы, которые работают слишком долго.
 - На входе три параметра: название процесса, допустимое время жизни (в минутах) и частота проверки (в минутах).
