@@ -10,7 +10,7 @@ Example launches: monitor.exe notepad 5 1
 With these options the tool checks once per minute if the process notepad is alive for more than 5 minutes, and &quot;kills&quot; it if it is.
 
 #### Notes
-The project contains a small part of the tests as an example. The rest of the tests were not written, because for this task it is more reasonable to check manually.
+The project contains a small part of the tests as an example. The rest of the tests were not written, as it was more economical to check manually for this task.
 
 ## Задание RUS
 
