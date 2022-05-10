@@ -29,11 +29,11 @@ namespace ProcessSentinel
                 var processArr = Process.GetProcessesByName(Command.ProcessName);
                 foreach (var process in processArr)
                 {
-                    if (DateTime.Now.Subtract(process.StartTime).Minutes <= Command.TimeToLiveMinutes) continue;
+                    if (DateTime.Now.Subtract(process.StartTime).Minutes < Command.TimeToLiveMinutes) continue;
                     if (KillProcess(process))
                     {
                         Console.WriteLine(
-                            $"Successful kill process with name = {process.ProcessName}, id = {process.Id}.");
+                            $"Successful kill process with name = {process.ProcessName}, id = {process.Id}, TTL = {DateTime.Now.Subtract(process.StartTime).Minutes}.");
                     }
                 }
                 await Task.Delay(ToMilliseconds(Command.TimePollingMinutes), ct);

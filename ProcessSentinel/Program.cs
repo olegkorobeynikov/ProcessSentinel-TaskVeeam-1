@@ -9,7 +9,7 @@ namespace ProcessSentinel
             Command command = null;
             if (args == null || args.Length == 0)
             {
-                Console.WriteLine("Enter command end press Enter.");
+                Console.WriteLine("Enter command and press Enter.");
             }
             else
             {

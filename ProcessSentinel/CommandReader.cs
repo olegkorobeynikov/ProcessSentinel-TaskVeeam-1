@@ -9,7 +9,7 @@ namespace ProcessSentinel
             Command command = null;
             while (command == null || !command.IsSet())
             {
-                var potentialCommand = Console.ReadLine();
+                var potentialCommand = Console.ReadLine()?.Trim();
                 command = CommandParser.Parse(potentialCommand);
             }
 
