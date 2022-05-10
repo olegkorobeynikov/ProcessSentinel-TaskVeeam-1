@@ -29,14 +29,14 @@ namespace ProcessSentinel
                 var processArr = Process.GetProcessesByName(Command.ProcessName);
                 foreach (var process in processArr)
                 {
-                    if (DateTime.Now.Subtract(process.StartTime).Minutes <= Command.TimeToLive) continue;
+                    if (DateTime.Now.Subtract(process.StartTime).Minutes <= Command.TimeToLiveMinutes) continue;
                     if (KillProcess(process))
                     {
                         Console.WriteLine(
                             $"Successful kill process with name = {process.ProcessName}, id = {process.Id}.");
                     }
                 }
-                await Task.Delay(Command.TimePolling, ct);
+                await Task.Delay(ToMilliseconds(Command.TimePollingMinutes), ct);
             }
         }
 
@@ -54,6 +54,11 @@ namespace ProcessSentinel
             }
 
             return false;
+        }
+
+        private static int ToMilliseconds(int time)
+        {
+            return time * 60000;
         }
 
         private void SentinelController(CancellationTokenSource cts)
